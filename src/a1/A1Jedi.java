@@ -24,6 +24,11 @@ public class A1Jedi {
 		String[] fName = new String[numCustomer];
 		String[] lName = new String[numCustomer];
 		int[] numBoughtCustomer = new int[numOfItems];
+		boolean[] alreadyBought = new boolean[numOfItems];
+		for(int i = 0; i < alreadyBought.length; i++)
+		{
+			alreadyBought[i] = false;
+		}
 		for(int i = 0; i < numCustomer; i++)
 		{
 			fName[i] = input.next();
@@ -35,16 +40,22 @@ public class A1Jedi {
 			{
 				quantity[z] = input.nextInt();
 				boughtName[z] = input.next();
-				
 				for(int y = 0; y < numOfItems; y++)
 				{
 					if(boughtName[z].equals(itemNames[y]))
 					{
 						itemQuantity[y] += quantity[z];
-						numBoughtCustomer[y]++;
+						if(!alreadyBought[y])
+						{
+							alreadyBought[y] = true;
+							numBoughtCustomer[y]++;
+						}
+						
 					} 
 				}
+				
 			}
+			
 		}
 		for(int i = 0; i < numOfItems; i++)
 		{
