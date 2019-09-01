@@ -42,13 +42,19 @@ public class A1Jedi {
 					{
 						itemQuantity[y] += quantity[z];
 						numBoughtCustomer[y]++;
-					}
+					} 
 				}
 			}
 		}
 		for(int i = 0; i < numOfItems; i++)
 		{
-			System.out.println(numBoughtCustomer[i] + " " + "customers bought " + itemQuantity[i] + " " + itemNames[i]);
+			if(itemQuantity[i] == 0)
+			{
+				System.out.println(numBoughtCustomer[i] + " " + "customers bought "  + itemNames[i]);
+			} else
+			{
+				System.out.println(numBoughtCustomer[i] + " " + "customers bought " + itemQuantity[i] + " " + itemNames[i]);
+			}
 		}
 	}
 }
