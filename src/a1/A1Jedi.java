@@ -25,10 +25,7 @@ public class A1Jedi {
 		String[] lName = new String[numCustomer];
 		int[] numBoughtCustomer = new int[numOfItems];
 		boolean[] alreadyBought = new boolean[numOfItems];
-		for(int i = 0; i < alreadyBought.length; i++)
-		{
-			alreadyBought[i] = false;
-		}
+		reset(alreadyBought);
 		for(int i = 0; i < numCustomer; i++)
 		{
 			fName[i] = input.next();
@@ -53,9 +50,8 @@ public class A1Jedi {
 						
 					} 
 				}
-				
 			}
-			
+			reset(alreadyBought);
 		}
 		for(int i = 0; i < numOfItems; i++)
 		{
@@ -66,6 +62,13 @@ public class A1Jedi {
 			{
 				System.out.println(numBoughtCustomer[i] + " " + "customers bought " + itemQuantity[i] + " " + itemNames[i]);
 			}
+		}
+	}
+	public static void reset(boolean[] array)
+	{
+		for(int i = 0; i < array.length; i++)
+		{
+			array[i] = false;
 		}
 	}
 }
